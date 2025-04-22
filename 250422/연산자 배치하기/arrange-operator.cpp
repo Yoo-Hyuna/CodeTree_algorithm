@@ -1,14 +1,15 @@
 #include <iostream>
 #include <vector>
+#include <climits>
 
 using namespace std;
 
 vector<int> vec;    //숫자 배열
-//vector<int> operationOD;    //연산자 순서
 vector<int> path;
 int maxx = 0;
 int minn = 0;
 int cmp = 0;
+int cnt =0;
 
 int op(int total) {
     int cal = vec[0];
@@ -30,9 +31,15 @@ int op(int total) {
 void generate(vector<int>& nums, vector<int>& counts, vector<int>& path, int total) {
     if (path.size() == total) {
         cmp = op(total);
-        if (cmp >= maxx) maxx = cmp;
-        if (cmp <= minn) minn = cmp;
-        
+        if(cnt==0){
+            maxx = cmp;
+            minn = cmp;
+        } else{
+            if (cmp >= maxx) maxx = cmp;
+            if (cmp <= minn) minn = cmp;
+        }
+       
+        cnt++;
         return;
     }
 
