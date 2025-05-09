@@ -26,9 +26,12 @@ vector<node> hp;
 int dellll(string str) {
     queue<node> q;
 
-    for (int i = 0; i < m;i++) {
+    for (int i = 0; i < m; i++) {
         q.push(hp[str[i] - '0']);
+        visited[hp[str[i] - '0'].x][hp[str[i] - '0'].y] == true;
+
     }
+
 
     int dx[] = { -1,0,1,0 };
     int dy[] = { 0,1,0,-1 };
@@ -58,7 +61,6 @@ int dellll(string str) {
 
     ///dfs문 안에서는 최대 값을 찾고 main에서 결과 값 모임에서 최소값을 찾아서 출력
     maxxx = -1;
-
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             if (visited[i][j] == false && map[i][j] == 0) {
@@ -94,7 +96,7 @@ void dfs(int dep, int start, int hpCnt, string str) {
 
 
 int main() {
-    //freopen_s(new FILE*, "input.txt", "r", stdin);
+   // freopen_s(new FILE*, "input.txt", "r", stdin);
 
     int input;
     int cnt = 1;
@@ -114,6 +116,9 @@ int main() {
                 hp.push_back({ i,j });  //전체 병원 목록이 들어감
         }
     }
+
+
+
 
     //병원 조합 선택 bfs
     dfs(0, 0, hp.size(),"");
