@@ -39,7 +39,7 @@ int dellll(string str) {
 
     while (!q.empty()) {
         temp = q.front();
-        if (visited[temp.x][temp.y] == true) break;
+        if (visited[temp.x][temp.y] == true) continue;
         else visited[temp.x][temp.y] = true;
         q.pop();
         for (int i = 0; i < 4;i++) {
