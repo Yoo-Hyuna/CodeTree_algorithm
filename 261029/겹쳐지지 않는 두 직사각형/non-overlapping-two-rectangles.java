@@ -60,26 +60,18 @@ public class Main {
                                         if(cant == false){
                                             answer = Math.max(sum + psum, answer);
                                         }
-
                                     
                                     }
                                 }
 
-
-
                             }
                         }
-
-
                     
                     }
                 }
 
-
-
             }
         }
-
 
         System.out.print(answer);
     }
